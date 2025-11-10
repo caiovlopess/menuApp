@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Finalizar Pedido</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="fechar()">X</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Nome do cliente</ion-label>
+    <ion-input [(ngModel)]="nomeCliente" placeholder="Ex: Caio"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-margin-top">
+    <ion-label>Consumo</ion-label>
+  </ion-item>
+
+  <ion-segment [(ngModel)]="tipoConsumo">
+    <ion-segment-button value="local">
+      <ion-label>Comer aqui</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="leve">
+      <ion-label>Levar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-button 
+    expand="block" 
+    color="success" 
+    class="ion-margin-top"
+    (click)="confirmar()"
+    [disabled]="!nomeCliente || nomeCliente.trim() === ''">
+    CONFIRMAR (R$ {{ total | number:'1.2-2' }})
+  </ion-button>
+</ion-content>
