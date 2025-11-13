@@ -22,7 +22,7 @@ const ProdutoSchema = new mongoose.Schema({
 const PedidoSchema = new mongoose.Schema({
     cliente: { type: String, required: true },
     tipoConsumo: { type: String, enum: ['local', 'leve'], required: true },
-    itens: [ /* ... */ ],
+    itens: [  ],
     total: { type: Number, required: true },
     data: { type: Date, default: Date.now },
     status: { type: String, default: 'Recebido' }
