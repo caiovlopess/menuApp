@@ -1,2 +1,26 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// Arquivo: src/theme/variables.scss
+
+:root {
+  /** Cores Globais **/
+
+  /* Cores primárias (AGORA VERMELHO) */
+  --ion-color-primary: #d9232d;
+  --ion-color-primary-rgb: 217, 35, 45;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #be1f28;
+  --ion-color-primary-tint: #dc3942;
+
+  /* Cores secundárias (pode manter ou alterar) */
+  --ion-color-secondary: #3dc2ff;
+  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #36abe0;
+  --ion-color-secondary-tint: #50c8ff;
+
+  /* ... e assim por diante para as outras cores (tertiary, success, etc.) ... */
+
+}
+
+/* ... (pode haver um outro bloco @media (prefers-color-scheme: dark) aqui, não mexa nele por enquanto) ... */

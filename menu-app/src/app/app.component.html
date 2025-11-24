@@ -1,3 +1,26 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="main-content" type="overlay">
+    <!-- Removi o header daqui, pois o estilo agora é controlado pelo content -->
+    <ion-content>
+      <!-- Container para a Logo -->
+      <div class="logo-container">
+  <img src="https://img.icons8.com/ios/100/hamburger.png" alt="Menu Burger Logo">
+</div>
+
+      <ion-list>
+        <!-- A estrutura do item mudou para acomodar o novo estilo -->
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item [routerLink]="[p.url]" routerDirection="root" routerLinkActive="selected">
+            <div class="item-container">
+              <!-- A imagem de fundo é aplicada via CSS -->
+              <div class="category-image" [style.backgroundImage]="'url(' + p.image + ')'"></div>
+              <ion-label>{{ p.title }}</ion-label>
+            </div>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

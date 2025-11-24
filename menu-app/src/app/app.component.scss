@@ -1,0 +1,82 @@
+// Garante que o menu use a cor primária (vermelho)
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+}
+
+// Estiliza a área de conteúdo do menu
+ion-content {
+  --background: var(--ion-color-primary); // Fundo vermelho
+  --padding-top: 20px;
+}
+
+// Remove as linhas padrão da lista
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+// Estiliza cada item do menu para parecer um card
+ion-item {
+  --background: transparent; // Fundo do item transparente
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  padding: 0 16px 20px; // Espaçamento entre os cards
+  cursor: pointer;
+
+  // Remove a cor de fundo ao clicar no item
+  --ripple-color: transparent;
+
+  // Efeito de clarear ao passar o mouse
+  &:hover {
+    opacity: 0.8;
+  }
+
+  // O container para a imagem e o texto
+  .item-container {
+    background: var(--ion-color-primary-shade); // Um tom de vermelho mais escuro
+    border-radius: 10px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // A imagem de fundo circular
+  .category-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 8px;
+    border: 3px solid var(--ion-color-primary-contrast); // Borda branca
+  }
+
+  // O texto da categoria
+  ion-label {
+    color: var(--ion-color-primary-contrast); // Texto branco
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+
+// Estilo para o item que está selecionado (ativo)
+ion-item.selected {
+  .item-container {
+    background: var(--ion-color-primary-tint); // Um tom de vermelho mais claro
+  }
+}
+
+// Container para a logo
+.logo-container {
+  padding: 20px 16px;
+  text-align: center;
+  
+  img {
+    max-width: 120px; // Ajuste o tamanho da sua logo
+  }
+}
