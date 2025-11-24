@@ -21,7 +21,7 @@ export interface Pedido {
   total: number;
 }
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://menuapp-h8se.onrender.com/api';
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +40,7 @@ export class MenuService {
 
   //Métodos do crud do admin
 
-   getProdutoById(id: string): Observable<Produto> {
+  getProdutoById(id: string): Observable<Produto> {
     return this.http.get<Produto>(`${API_URL}/produtos/${id}` );
   }
 

@@ -1,5 +1,3 @@
-// Arquivo: src/app/home/home.page.ts
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule, ModalController } from '@ionic/angular';
@@ -9,7 +7,6 @@ import { MenuService, Produto } from '../services/menu.services';
 import { CartModalPage } from '../cart-modal/cart-modal.page';
 import { FinalizarPedidoModal } from '../modals/finalizar-pedido/finalizar-pedido.page';
 
-// AQUI ESTÁ A CORREÇÃO: "extends Produto"
 interface ItemCarrinho extends Produto {
   quantidade: number;
 }
@@ -49,13 +46,11 @@ export class HomePage implements OnInit {
   handleSearch(event: any) {
   const termoBusca = event.target.value.toLowerCase();
 
-  // Se o termo da busca estiver vazio, restaura a lista completa da categoria
   if (!termoBusca) {
     this.produtos = this.todosOsProdutosDaCategoria;
     return;
   }
 
-  // Se houver um termo, filtra a lista que já temos
   this.produtos = this.todosOsProdutosDaCategoria.filter(p =>
     p.nome.toLowerCase().includes(termoBusca)
   );
