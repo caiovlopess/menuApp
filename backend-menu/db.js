@@ -16,7 +16,8 @@ const ProdutoSchema = new mongoose.Schema({
     nome: { type: String, required: true },
     descricao: String,
     preco: { type: Number, required: true },
-    categoria: { type: String, required: true }
+    categoria: { type: String, required: true },
+    imagemUrl: { type: String }
 });
 
 const PedidoSchema = new mongoose.Schema({
